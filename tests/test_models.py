@@ -20,13 +20,13 @@ class TestModels(unittest.TestCase):
         self.magazine = Magazine(name="Tech Weekly", category="Technology")
         self.article = Article(title="Test Title", content="Test Content", author_id=self.author.id, magazine_id=self.magazine.id)
 
-    def tearDown(self):
-        """Clean up database after each test"""
-        self.cursor.execute("DROP TABLE IF EXISTS authors")
-        self.cursor.execute("DROP TABLE IF EXISTS magazines")
-        self.cursor.execute("DROP TABLE IF EXISTS articles")
-        self.conn.commit()
-        self.conn.close()
+    # def tearDown(self):
+    #     """Clean up database after each test"""
+    #     self.cursor.execute("DROP TABLE IF EXISTS authors")
+    #     self.cursor.execute("DROP TABLE IF EXISTS magazines")
+    #     self.cursor.execute("DROP TABLE IF EXISTS articles")
+    #     self.conn.commit()
+    #     self.conn.close()
 
     def test_author_creation(self):
         author = Author(name="Jane Doe")
